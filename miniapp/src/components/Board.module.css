@@ -1,0 +1,156 @@
+.wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 10px;
+  background: linear-gradient(145deg, rgba(7, 16, 32, 0.96), rgba(12, 74, 110, 0.85));
+  border-radius: 22px;
+  gap: clamp(4px, 1.2vw, 6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.42);
+  -webkit-tap-highlight-color: transparent;
+  overflow: hidden; /* clip falling tiles so they appear from above the board */
+}
+
+.row {
+  display: flex;
+  gap: clamp(4px, 1.2vw, 6px);
+}
+
+.tile {
+  width: clamp(44px, 7.5vw, 56px);
+  height: clamp(44px, 7.5vw, 56px);
+  border: none;
+  border-radius: 16px;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  will-change: transform, opacity;
+  user-select: none;
+  touch-action: manipulation;
+  box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.35), inset 0 -4px 10px rgba(6, 17, 38, 0.8), 0 8px 18px rgba(2, 6, 23, 0.45);
+}
+
+.bomb::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.8), rgba(251,146,60,0.9) 40%, rgba(190,24,93,0.9) 70%);
+  box-shadow: 0 0 10px rgba(251,146,60,0.8), 0 0 20px rgba(236,72,153,0.6);
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(0.92); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+.tile:focus-visible {
+  outline: 3px solid rgba(250, 204, 21, 0.8);
+  outline-offset: 2px;
+}
+
+.tile:hover:not(.disabled) {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.selected {
+  box-shadow: 0 0 0 4px rgba(248, 250, 252, 0.4), inset 0 2px 8px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.invalid {
+  animation: shake 0.35s ease;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.9;
+}
+
+.pop {
+  /* Instant vanish: remove overshoot to avoid visual reappear */
+  animation: burstInstant 0.22s ease-out var(--pop-delay, 0s) both;
+}
+
+.falling {
+  animation: fallDown var(--fall-duration, 0.78s) cubic-bezier(0.18, 0.86, 0.25, 1) var(--fall-delay, 0s) both;
+  transform: translateY(calc(-1 * var(--fall-distance, 0px)));
+}
+
+/* spawn is handled by .falling for a unified descent effect */
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-4px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes burstInstant {
+  0%   { transform: scale(1);   opacity: 1;  box-shadow: 0 0 0 rgba(255,255,255,0); }
+  100% { transform: scale(0.2); opacity: 0;  box-shadow: 0 0 0 rgba(255,255,255,0); }
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(calc(-1 * var(--fall-distance, 0px)));
+  }
+  86% { transform: translateY(calc(0.06 * var(--fall-distance, 0px))); }
+  100% { transform: translateY(0); }
+}
+
+/* removed spawnPop to avoid scale pop-in */
+
+/* Mobile-first tweaks */
+@media (max-width: 480px) {
+  .wrapper {
+    padding: 8px;
+    border-radius: 20px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .pop, .falling, .spawn, .invalid, .tile:hover {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+.red {
+  background: radial-gradient(circle at 30% 30%, #fecaca, #ef4444);
+}
+
+.orange {
+  background: radial-gradient(circle at 30% 30%, #fed7aa, #fb923c);
+}
+
+.yellow {
+  background: radial-gradient(circle at 30% 30%, #fef08a, #facc15);
+}
+
+.green {
+  background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e);
+}
+
+.blue {
+  background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6);
+}
+
+.purple {
+  background: radial-gradient(circle at 30% 30%, #e9d5ff, #a855f7);
+}

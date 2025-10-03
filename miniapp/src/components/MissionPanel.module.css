@@ -1,0 +1,228 @@
+.container {
+  background: rgba(15, 23, 42, 0.78);
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: min(92vw, 340px);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.stageBadge {
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #bae6fd;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.missionRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(8, 19, 38, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 18px 40px rgba(8, 47, 73, 0.25);
+}
+
+.missionHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.missionTitleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.missionPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.18);
+  color: #bfdbfe;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.missionName {
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.missionProgress {
+  color: #cbd5f5;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(203, 213, 225, 0.85);
+}
+
+.progressTrack {
+  position: relative;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 12px;
+  height: 14px;
+  overflow: hidden;
+}
+
+.progressFill {
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+}
+
+.progressFill[data-color='red'] {
+  background: linear-gradient(90deg, #fb7185, #ef4444);
+}
+
+.progressFill[data-color='orange'] {
+  background: linear-gradient(90deg, #fb923c, #f97316);
+}
+
+.progressFill[data-color='yellow'] {
+  background: linear-gradient(90deg, #facc15, #f59e0b);
+}
+
+.progressFill[data-color='green'] {
+  background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.progressFill[data-color='blue'] {
+  background: linear-gradient(90deg, #60a5fa, #3b82f6);
+}
+
+.progressFill[data-color='purple'] {
+  background: linear-gradient(90deg, #c084fc, #a855f7);
+}
+
+.rewardRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.rewardLabel {
+  opacity: 0.6;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.rewardValue {
+  font-weight: 600;
+}
+
+.completed {
+  font-size: 12px;
+  color: #86efac;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+.completeBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 36px 20px;
+  border-radius: 18px;
+  border: 1px dashed rgba(148, 163, 184, 0.28);
+  background: rgba(15, 118, 110, 0.12);
+  color: #bbf7d0;
+}
+
+.completeEmoji {
+  font-size: 32px;
+}
+
+.completeText {
+  margin: 0;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.scoreBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.scoreHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.scoreTitle {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(226, 232, 240, 0.75);
+}
+
+.scoreProgress {
+  font-size: 13px;
+  color: #cbd5f5;
+}
+
+.milestoneNote {
+  font-size: 12px;
+  color: #fde68a;
+}
+
+.details { margin-top: 8px; display: flex; flex-direction: column; gap: 6px; }
+.detailRow { font-size: 12px; color: #e2e8f0; opacity: 0.9; }
+
+.chip {
+  display: inline-block;
+  width: 12px; height: 12px; margin-left: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(255,255,255,0.35), inset 0 -3px 6px rgba(6,17,38,0.8);
+}
+.chip[data-color='red'] { background: radial-gradient(circle at 30% 30%, #fecaca, #ef4444); }
+.chip[data-color='orange'] { background: radial-gradient(circle at 30% 30%, #fed7aa, #fb923c); }
+.chip[data-color='yellow'] { background: radial-gradient(circle at 30% 30%, #fef08a, #facc15); }
+.chip[data-color='green'] { background: radial-gradient(circle at 30% 30%, #bbf7d0, #22c55e); }
+.chip[data-color='blue'] { background: radial-gradient(circle at 30% 30%, #bfdbfe, #3b82f6); }
+.chip[data-color='purple'] { background: radial-gradient(circle at 30% 30%, #e9d5ff, #a855f7); }

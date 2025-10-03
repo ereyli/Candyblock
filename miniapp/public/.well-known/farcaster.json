@@ -1,0 +1,33 @@
+{
+  "accountAssociation": {
+    "header": "",
+    "payload": "",
+    "signature": ""
+  },
+  "baseBuilder": {
+    "allowedAddresses": [""]
+  },
+  "miniapp": {
+    "version": "1",
+    "name": "SweetChain Görevleri",
+    "homeUrl": "https://example.com",
+    "iconUrl": "https://example.com/icon.png",
+    "splashImageUrl": "https://example.com/splash.png",
+    "splashBackgroundColor": "#0F172A",
+    "webhookUrl": "https://example.com/api/webhook",
+    "subtitle": "Görev tabanlı zincir oyunu",
+    "description": "Candy Crush esintili, görevlerle ilerleyen ve giriş ücreti Base üzerinden tahsil edilen mini oyun.",
+    "screenshotUrls": [
+      "https://example.com/screenshot-1.png",
+      "https://example.com/screenshot-2.png"
+    ],
+    "primaryCategory": "gaming",
+    "tags": ["onchain", "match3", "missions"],
+    "heroImageUrl": "https://example.com/hero.png",
+    "tagline": "Görevleri tamamla, zinciri fethet",
+    "ogTitle": "SweetChain Görevleri",
+    "ogDescription": "Match-3 mekaniğini Base ağının gücüyle birleştir.",
+    "ogImageUrl": "https://example.com/og.png",
+    "noindex": false
+  }
+}

@@ -1,0 +1,20 @@
+# Node / Next build artifacts
+miniapp/node_modules/
+miniapp/.next/
+miniapp/out/
+miniapp/.turbo/
+miniapp/.vercel/
+
+# OS / editor junk
+.DS_Store
+*.log
+
+# Env files
+miniapp/.env
+miniapp/.env.local
+miniapp/.env.*
+
+# Build caches
+miniapp/.eslintcache
+miniapp/.swc/
+

@@ -1,0 +1,162 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.6);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.card {
+  width: min(92vw, 420px);
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  padding: 20px;
+  color: #e2e8f0;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.55);
+}
+
+.title {
+  margin: 0 0 8px 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.desc {
+  margin: 0 0 16px 0;
+  color: #94a3b8;
+}
+
+.scoreBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(8, 19, 38, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 14px;
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+
+.scoreLabel { font-size: 13px; letter-spacing: 0.6px; text-transform: uppercase; color: #cbd5f5; }
+.scoreValue { font-size: 26px; font-weight: 800; }
+
+.actions { display: flex; gap: 10px; }
+.primaryBtn {
+  flex: 1;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+  background: linear-gradient(135deg, #38bdf8, #3b82f6);
+  color: #0f172a;
+}
+
+.tips { margin-top: 12px; font-size: 12px; color: #94a3b8; }
+
+.claimCard {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 18px;
+  border-radius: 16px;
+  background: rgba(8, 19, 38, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.16);
+}
+
+.claimTitle {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: rgba(226, 232, 240, 0.82);
+}
+
+.claimRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(226, 232, 240, 0.92);
+}
+
+.claimLabel { opacity: 0.75; }
+.claimValue { font-weight: 700; color: #bae6fd; }
+
+.claimInput {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  background: rgba(15, 23, 42, 0.78);
+  color: #e2e8f0;
+  padding: 10px 12px;
+  font-size: 13px;
+  resize: vertical;
+}
+
+.claimInput::placeholder {
+  color: rgba(148, 163, 184, 0.7);
+}
+
+.claimHint {
+  font-size: 12px;
+  color: rgba(148, 163, 184, 0.78);
+}
+
+.submitBtn {
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #03203a;
+  cursor: pointer;
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: rgba(148, 163, 184, 0.22);
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.claimBtn {
+  align-self: flex-start;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: #052e16;
+  cursor: pointer;
+}
+
+.claimBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: rgba(148, 163, 184, 0.22);
+  color: rgba(226, 232, 240, 0.6);
+}
+
+.claimError {
+  font-size: 13px;
+  color: #fca5a5;
+}
+
+.claimSuccess {
+  font-size: 13px;
+  color: #bbf7d0;
+}
+
+.claimLink {
+  color: #7dd3fc;
+  text-decoration: underline;
+}

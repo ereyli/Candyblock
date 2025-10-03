@@ -1,0 +1,70 @@
+:root {
+  color-scheme: light dark;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --bg: #0b1224;
+  --fg: #e2e8f0;
+  --muted: #94a3b8;
+  --card: rgba(8, 19, 38, 0.65);
+  background: radial-gradient(1200px 800px at 70% -10%, rgba(56, 189, 248, 0.16), transparent 60%),
+              radial-gradient(900px 600px at -10% 20%, rgba(124, 58, 237, 0.15), transparent 60%),
+              var(--bg);
+  color: var(--fg);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: env(safe-area-inset-bottom);
+  position: relative;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle moving grid + scanlines for arcade feel */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -200vh -200vw;
+  pointer-events: none;
+  background:
+    radial-gradient(1200px 800px at 120% -20%, rgba(99,102,241,0.12), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 3px),
+    repeating-linear-gradient(90deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 5px);
+  transform: translate3d(0,0,0);
+  animation: drift 38s linear infinite;
+  z-index: -1;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.12) 40%, transparent 60%);
+  mix-blend-mode: overlay;
+}
+
+@keyframes drift {
+  0% { transform: translate3d(0,0,0) rotate(0deg); }
+  50% { transform: translate3d(2%, -1%, 0) rotate(0.5deg); }
+  100% { transform: translate3d(0,0,0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
